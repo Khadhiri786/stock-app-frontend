@@ -1,0 +1,56 @@
+.title {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 50px;
+  font-family: "Rozha One";
+  width: 400 !important;
+  color: #2f2f2f;
+  text-align: center;
+}
+.description {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: 480;
+  color: #2f2f2f;
+}
+.dashboardBackgrond {
+  background-image: url("../../assets/bg-img.png");
+  height: 650px;
+  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-color: #bddeff;
+}
+.textField {
+  width: 540px;
+  margin-left: 490px !important;
+  margin-top: 120px !important;
+  height: 80px !important;
+}
+
+.MuiInputBase-input {
+  background-color: #fff !important;
+}
+.MuiFilledInput-root {
+  border-radius: 60px;
+  border-top-left-radius: 65px !important;
+  border-top-right-radius: 65px !important;
+}
+.trendingTitle {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.MuiInput-underline:before {
+  border: none !important;
+}
+.MuiInput-underline:after {
+  border: none !important;
+}
+.css-1pf2f2k-MuiAutocomplete-root .MuiInput-root .MuiInput-input{
+  height: 40px;
+  border-radius: 50px;
+}

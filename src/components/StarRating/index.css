@@ -1,0 +1,40 @@
+.totalCount {
+  color: gray;
+  margin-left: 5px;
+  font-size: 0.8rem !important;
+}
+.infoIcon {
+  color: grey;
+  height: 0.7em !important;
+}
+.rating {
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+}
+.MuiGrid-root.MuiGrid-item.MuiGrid-grid-lg-7.css-52efdw-MuiGrid-root
+  .ratingName {
+  width: 50%;
+  border-radius: 1px solid grey;
+}
+.ratingTopic {
+  /* height: 26px; */
+  font-size: 0.8rem;
+  position: absolute;
+  margin-left: 10px;
+  /* //  padding-top: 5px; */
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 7px;
+  background-color: #b9dd4e;
+  color: white;
+}
+.ratingContent {
+  margin-top: 12px;
+  padding: 10px;
+}
+.ratingGrid {
+  margin-bottom: 10px;
+}
+[class="MuiGrid-root MuiGrid-item MuiGrid-grid-lg-5.5 ratingGrid css-8v87cc-MuiGrid-root"] {
+  padding-bottom: 20px;
+}
