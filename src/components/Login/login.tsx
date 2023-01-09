@@ -58,7 +58,10 @@ const Login = () => {
           navigate("/dashboard");
         });
       }
-    });
+    })
+    .catch((err)=>{
+      alert("Network Error");
+    })
   };
 
   const handleInputPasswordChange = (password: string) => {

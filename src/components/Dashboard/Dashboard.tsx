@@ -17,14 +17,15 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:7007/Stocks/GetSearchSuggestions")
+      .get("http://localhost:5000/getSearchSuggestions")
       .then((response) => {
+        console.log(response);
         if (response.status === 200) {
           const data = response?.data;
           const value = data?.map((item: any) => ({
-            title: item?.stockName,
-            id: item?.stockId,
-            nse: item?.nseListedName,
+            title: item?.companyname,
+            id: item?.stockid,
+            nse: item?.nselistedname,
           }));
           setStockData(value);
         }
