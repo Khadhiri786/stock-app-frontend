@@ -34,7 +34,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:7007/Stocks/GetTrendingStocks")
+      .get("http://localhost:5000/latestTrendingStocks")
       .then((response) => {
         setTrendingStock(response?.data);
       });
@@ -43,7 +43,7 @@ const Dashboard = () => {
     try {
       setInterval(async () => {
         const res = await fetch(
-          "https://localhost:7007/Stocks/GetTrendingStocks"
+          "http://localhost:5000/latestTrendingStocks"
         );
         const stockData = await res.json();
         setTrendingStock(stockData);
@@ -164,8 +164,8 @@ const Dashboard = () => {
           {trendingStock?.map((item: any) => (
             <Grid item lg={2} style={{ marginLeft: "10px",backgroundColor:"#EDEBEB0",opacity:'0.8',padding:'12px',border:'none' }}>
               <Card style={{ textAlign: "center" }}><>
-                <Link href={`/stock/${item?.stockId}`} >
-                  {item?.stockName}
+                <Link href={`/stock/${item?.stockid}`} >
+                  {item?.companyname}
                 </Link>
 
                 </>

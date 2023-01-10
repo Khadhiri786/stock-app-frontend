@@ -14,12 +14,13 @@ const StockDashboard: React.FC = () => {
 
   const { stockId } = useParams();
   const tableList = [
-    { title: "MARKET CAP", value: stockData?.marketCaptilization },
-    { title: "ENTERPRISES VALUE", value: stockData?.enterpriceValue },
-    { title: "nO. OF SHARES", value: stockData?.numberOfShares },
-    { title: "DIV YIELD", value: stockData?.dividentYield },
-    { title: "CASH", value: stockData?.cashInM },
-    { title: "PROMOTER HOLDING", value: stockData?.promoterHolding },
+    { title: "MARKET CAP", value: stockData?.marketcaptilization },
+    { title: "ENTERPRISES VALUE", value: stockData?.enterpricevalue },
+    { title: "nO. OF SHARES", value: stockData?.numberofshares },
+    { title: "DIV YIELD", value: stockData?.dividentyield },
+    { title: "CASH", value: stockData?.cashinm },
+    { title: "PROMOTER HOLDING", value: stockData?.debtinm
+  },
   ];
   const stockList = [
     { totalCount: "8", title: "Strengths", value: stockData?.strength },
@@ -55,19 +56,16 @@ const StockDashboard: React.FC = () => {
   ];
   useEffect(() => {
     axios
-      .get(`https://localhost:7007/Stocks/GetStockById?Id=${stockId}`, {
+      .get(`http://localhost:5000/stock/${stockId}`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
       })
       .then((res) => {
+        console.log(res?.data);
         setStockData(res?.data);
       });
-      axios.get("https://localhost:7007/Stocks",{headers: {
-        Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-      },}).then((res)=>{
-        console.log(res);
-      })
+      
   }, []);
 
   return (
@@ -76,19 +74,19 @@ const StockDashboard: React.FC = () => {
       <div style={{ padding: "10px", backgroundColor: "#EDEBEB" }}>
         <HeaderComponent
           currentDateTime={stockData?.currentDateTime}
-          bse={stockData?.bseListedName}
-          nse={stockData?.nseListedName}
-          currentPrice={stockData?.currentTradingPrice}
-          variationPrice={stockData?.variationPrice}
-          title={stockData?.companyName}
-          variationPercentage={stockData?.variationPercentage}
-          sector={`${stockData?.companyName} - Exploration`}
+          bse={stockData?.bselistedname}
+          nse={stockData?.nselistedname}
+          currentPrice={stockData?.currenttradingprice}
+          variationPrice={stockData?.variationprice}
+          title={stockData?.companyname}
+          variationPercentage={stockData?.variationpercentage}
+          sector={`${stockData?.companyname} - Exploration`}
         />
         <PriceCard
-          high52Rate={stockData?.high52W}
-          low52Rate={stockData?.low52W}
-          todaysLowRate={stockData?.todaysLow}
-          todaysHighRate={stockData?.todaysHigh}
+          high52Rate={stockData?.high52w}
+          low52Rate={stockData?.low52w}
+          todaysLowRate={stockData?.todayslow}
+          todaysHighRate={stockData?.todayshigh}
         />
         <Grid container>
           <Grid item lg={8}>
