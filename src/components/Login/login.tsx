@@ -33,11 +33,12 @@ const Login = () => {
   }, [email, setEmail, password, setPassword]);
 
   const loginToApplication = (d: any) => {
-    fetch("https://localhost:7007/Authenticate", {
+    fetch("http://localhost:5000/login", {
       method: "POST",
       body: JSON.stringify({
-        mailId: email,
-        password: password,
+        email:email,
+        password:password
+       
       }),
       headers: {
         "Content-Type": "application/json",
