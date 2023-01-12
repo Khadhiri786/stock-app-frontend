@@ -22,12 +22,11 @@ function App() {
           path="/dashboard"
           element={
             <>
-            <Dashboard/>
-              {/* {userToken ? (
+              {userToken ? (
                 <Dashboard />
               ) : (
                 <Navigate to={"/login"} replace={true} />
-              )} */}
+              )}
             </>
           }
         />
@@ -35,12 +34,11 @@ function App() {
           path="/stock/:stockId"
           element={
             <>
-            <StockDashboard/>
-              {/* {userToken ? (
+              {userToken ? (
                 <StockDashboard />
               ) : (
                 <Navigate to={"/login"} replace={true} />
-              )} */}
+              )}
             </>
           }
         />
